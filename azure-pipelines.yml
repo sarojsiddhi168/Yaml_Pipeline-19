@@ -1,0 +1,18 @@
+
+pool: 
+  vmImage: 'windows-latest'
+
+trigger: none
+
+stages:
+  - stage: yuwa_stage
+    displayName: 'Yuwa Stage'
+    jobs:
+      - job: collage_job
+        displayName: 'Collage Job'
+        steps:
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: |
+                Write-Host "Hello World from yuwa sathi"
